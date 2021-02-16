@@ -1,0 +1,6 @@
+NL=Netherlands
+PE=Peru
+TN=Tunisia
+UA=Ukraine
+UG=Uganda
+US=USA
