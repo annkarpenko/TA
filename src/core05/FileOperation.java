@@ -16,17 +16,25 @@ public class FileOperation {
         File file = new File(inputPath);
         try{
             FileReader fileReader = new FileReader(file);
-            System.out.println("Data from the first file:");
+            System.out.println("Loading data from the file... Please wait");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
             Map<String, String> readList = new TreeMap<String, String>();
             String line;
-            while ((line = bufferedReader.readLine()) != null){
-                System.out.println(line);
-                String code1 = line.substring(0,2);
-                String country1 = line.substring(3);
-                Object line2= readList.put(code1, country1);
+            for (int i = 1; (line = bufferedReader.readLine()) != null; i++){
+                System.out.println(i + " " + line);
+                String code = line.substring(0,2);
+                String country = line.substring(3);
+                Object line2= readList.put(code, country);
             }
+            Boolean isEmpty=readList.isEmpty();
+            if (isEmpty == true){
+                System.out.println("Loading have been finished. File is empty");
+            }
+            else {
+                int size = readList.size();
+                System.out.println("Loading is completed. There are " + size + " items in the list");}
+            ;
 
             System.out.println("Sorting data ...");
             for (Map.Entry<String, String> mapData : readList.entrySet()) {
@@ -39,7 +47,7 @@ public class FileOperation {
                 fileWriter.write(line2);
                 fileWriter.write("\n");
             }
-            System.out.println("File has been recorded");
+            System.out.println("New file has been recorded");
 
             fileWriter.close();
             bufferedReader.close();
