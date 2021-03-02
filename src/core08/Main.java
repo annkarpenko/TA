@@ -18,7 +18,7 @@ public class Main {
         //print without 7
         for (int i=0; i < 10; i++){
             if (i != 6 ){
-                System.out.println(numbers1[i]);
+                System.out.println("Numbers " + numbers1[i]);
             }
         }
 
