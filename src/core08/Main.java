@@ -12,13 +12,13 @@ public class Main {
         }
         System.out.println(Arrays.toString(numbers1));
 
-        //“Five” instead of number 5;
+        //Add “Five” instead of number 5;
         numbers1[4] = "Five";
 
         //print without 7
         for (int i=0; i < 10; i++){
             if (i != 6 ){
-                System.out.println(numbers1[i]);
+                System.out.println("Numbers: " + numbers1[i]);
             }
         }
 
